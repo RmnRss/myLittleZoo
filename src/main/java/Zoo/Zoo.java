@@ -1,24 +1,31 @@
 package Zoo;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import Animaux.Animal;
+import Exception.AnimalDansMauvaisSecteurException;
+import Exception.LimiteVisiteursException;
 
 public class Zoo 
 {
 	private int visiteurs;
-	private List<Secteur> secteursAnimaux;
+	private List<Secteur> secteursAnimaux = new ArrayList<Secteur>();
 	
+	// Constructeur par défaut créer un zoo avec un secteur d'ours
 	public Zoo() 
 	{
 		this.visiteurs = 0;
+		this.secteursAnimaux.add(new Secteur("Ours"));
 	}
 	
-	public void nouveauVisiteur()
+	public void nouveauVisiteur() throws LimiteVisiteursException
 	{
 		int maxVisiteurs = secteursAnimaux.size()*15;
 		
 		if (visiteurs >= maxVisiteurs) 
 		{
-			Exception LimiteVisiteursException;
+			throw new LimiteVisiteursException("Plus de place dans le Zoo !");
 		} 
 		else 
 		{
@@ -31,9 +38,9 @@ public class Zoo
 		return secteursAnimaux.size()*15;
 	}
 	
-	public void nouvelAnimal()
+	public void nouvelAnimal() throws AnimalDansMauvaisSecteurException
 	{
-		
+		this.secteursAnimaux.get(0).ajouterAnimal(new Animal("Michel", "Ours"));
 	}
 	
 	public int nombreAnimaux()

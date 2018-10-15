@@ -1,27 +1,31 @@
 package Zoo;
+import java.util.ArrayList;
 import java.util.List;
 
 import Animaux.Animal;
+import Animaux.Ours;
+import Exception.AnimalDansMauvaisSecteurException;
 
 public class Secteur 
 {
 	private String typeAnimauxDansSecteur;
-	private List<Animal> animauxDansSecteur; 
+	private List<Animal> animauxDansSecteur = new ArrayList<Animal>();
 	
-	public Secteur()
+	public Secteur(String typeAnimauxSecteur)
 	{
-		
+		this.typeAnimauxDansSecteur = typeAnimauxSecteur;
+		animauxDansSecteur.add(new Ours("Winny"));
 	}
 	
-	public void ajouterAnimal(Animal new_animal)
+	public void ajouterAnimal(Animal new_animal) throws AnimalDansMauvaisSecteurException
 	{
 		if (this.obtenirType() == new_animal.getTypeAnimal()) 
 		{
-			Exception AnimalDansMauvaisSecteurException;
+			throw new AnimalDansMauvaisSecteurException("Imossible ! Mauvais type d'animal.");
 		}
 		else
 		{
-		animauxDansSecteur.add(new_animal);
+			animauxDansSecteur.add(new_animal);
 		}
 	}
 	
@@ -33,6 +37,11 @@ public class Secteur
 	public String obtenirType()
 	{
 		return typeAnimauxDansSecteur;
+	}
+	
+	public void setTypeAnimaux(String typeSecteur)
+	{
+		this.typeAnimauxDansSecteur = typeSecteur;
 	}
 
 }

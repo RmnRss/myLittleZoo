@@ -1,8 +1,8 @@
 package Animaux;
 public class Pingouin extends Animal 
 {
-	public Pingouin() 
+	public Pingouin(String nom) 
 	{
-		this.typeAnimal = "Pingouin";
+		super(nom, "Pingouin");
 	}
 }

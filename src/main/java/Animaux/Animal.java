@@ -3,11 +3,12 @@ package Animaux;
 public class Animal 
 {
 	private String nomAnimal;
-	public String typeAnimal;
+	private String typeAnimal;
 	
-	public Animal() 
+	public Animal(String nom, String type) 
 	{
-		
+		this.nomAnimal = nom;
+		this.typeAnimal = type;
 	}
 	
 	public String getNomAnimal() 

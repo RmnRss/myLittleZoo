@@ -2,8 +2,8 @@ package Animaux;
 
 public class Ours extends Animal
 {
-	public Ours() 
+	public Ours(String nom) 
 	{
-		this.typeAnimal = "Ours";
+		super(nom, "Ours");
 	}
 }
