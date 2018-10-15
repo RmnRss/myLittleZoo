@@ -15,7 +15,14 @@ public class Secteur
 	
 	public void ajouterAnimal(Animal new_animal)
 	{
+		if (this.obtenirType() == new_animal.getTypeAnimal()) 
+		{
+			Exception AnimalDansMauvaisSecteurException;
+		}
+		else
+		{
 		animauxDansSecteur.add(new_animal);
+		}
 	}
 	
 	public int getNombreAnimaux()

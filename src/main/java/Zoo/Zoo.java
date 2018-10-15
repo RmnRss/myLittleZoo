@@ -5,22 +5,30 @@ import java.util.List;
 public class Zoo 
 {
 	private int visiteurs;
-	
 	private List<Secteur> secteursAnimaux;
 	
 	public Zoo() 
 	{
-		
+		this.visiteurs = 0;
 	}
 	
 	public void nouveauVisiteur()
 	{
-		visiteurs++;
+		int maxVisiteurs = secteursAnimaux.size()*15;
+		
+		if (visiteurs >= maxVisiteurs) 
+		{
+			Exception LimiteVisiteursException;
+		} 
+		else 
+		{
+			visiteurs++;
+		}
 	}
 	
 	public int getLimiteVisiteur() 
 	{
-		return 50;
+		return secteursAnimaux.size()*15;
 	}
 	
 	public void nouvelAnimal()
