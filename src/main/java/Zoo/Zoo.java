@@ -43,6 +43,11 @@ public class Zoo
 		this.secteursAnimaux.get(0).ajouterAnimal(new Animal("Michel", "Ours"));
 	}
 	
+	public void nouvelAnimal(String nom, String type) throws AnimalDansMauvaisSecteurException
+	{
+		this.secteursAnimaux.get(0).ajouterAnimal(new Animal(nom, type));
+	}
+	
 	public int nombreAnimaux()
 	{
 		int nbr_animaux = 0;

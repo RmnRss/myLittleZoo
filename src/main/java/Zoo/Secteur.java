@@ -19,9 +19,9 @@ public class Secteur
 	
 	public void ajouterAnimal(Animal new_animal) throws AnimalDansMauvaisSecteurException
 	{
-		if (this.obtenirType() == new_animal.getTypeAnimal()) 
+		if (this.obtenirType() != new_animal.getTypeAnimal()) 
 		{
-			throw new AnimalDansMauvaisSecteurException("Imossible ! Mauvais type d'animal.");
+			throw new AnimalDansMauvaisSecteurException("Impossible ! Mauvais type d'animal.");
 		}
 		else
 		{

@@ -13,7 +13,7 @@ public class TestNombreVisiteur
 	{
 		Zoo testZoo = new Zoo();
 		
-		for (int i = 0; i < 5 ; i++) 
+		for (int i = 0; i < 25 ; i++) 
 		{
 			testZoo.nouveauVisiteur();
 		}
